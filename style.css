@@ -16,6 +16,7 @@ body {
     -webkit-font-smoothing: antialiased;
 
     background-color: purple;
+    font-family: "Roboto";
 }
 
 /* 5. Improve media defaults */
@@ -49,13 +50,17 @@ h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
+:root {
+    --side-margin-bottom: 50px;
+}
+
 
 .wrapper {
     min-height: 100vh;
     display: grid;
 
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 300px 4fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -66,12 +71,54 @@ h1, h2, h3, h4, h5, h6 {
     grid-area: header;
 }
 
-.sidebar {
-    background-color: yellow;
-    grid-area: sidebar;
-}
-
 .main-content {
     background-color: aquamarine;
     grid-area: main;
+}
+
+.sidebar {
+    background-color: rgb(201, 245, 255);
+    grid-area: sidebar;
+
+    display: grid;
+    align-content: start;
+    justify-content: start;
+    padding-left: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar h1 {
+    font-size: 32px;
+    margin-top: 10px;
+    padding-bottom: var(--side-margin-bottom);
+}
+
+.sidebar .menu, .sidebar .account-nav {
+    margin-bottom: var(--side-margin-bottom);
+    font-size: 23px;
+}
+
+.sidebar h1, .sidebar nav ul li {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar .symbol {
+    justify-self: end;
+}
+
+.sidebar a {
+    padding: 0 10px;
 }
