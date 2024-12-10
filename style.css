@@ -222,4 +222,24 @@ h1, h2, h3, h4, h5, h6 {
     background-color: aquamarine;
     grid-area: main;
     z-index: -1;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending";
+    gap: 15px;
 }
+
+.projects, .announcements, .trending {
+    background-color: red;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+
+
