@@ -17,6 +17,7 @@ body {
 
     background-color: purple;
     font-family: "Roboto";
+    min-height: 100vh;
 }
 
 /* 5. Improve media defaults */
@@ -52,15 +53,16 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
     --side-margin-bottom: 50px;
+    --main-color: rgb(201, 245, 255);
 }
 
 
 .wrapper {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
 
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 300px 4fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -72,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar {
-    background-color: rgb(201, 245, 255);
+    background-color: var(--main-color);
     grid-area: sidebar;
 
     display: grid;
@@ -118,17 +120,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 10px;
 }
 
-.main-header {
-    background-color: brown;
-    grid-area: header;
-}
-
 /* header information */
-.header-container {
-    background-color: green;
+.main-header {
+    background-color: rgb(193, 42, 42);
+    grid-area: header;
+    width: 100%;
+
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 70px;
+    grid-template-rows: 48px 60px;
     grid-template-areas: 
     "search account"
     "banner buttons";
@@ -138,7 +139,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .search-container {
     grid-area: search;
-    background-color: yellow;
 }
 
 .search-form {
@@ -147,53 +147,74 @@ h1, h2, h3, h4, h5, h6 {
 
 #search {
     appearance: none;
-    width: 400px;
+    width: 500px;
     margin-left: 10px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid gray;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(222, 230, 245);
     padding-left: 4px;
 }
 
 .account-info {
     grid-area: account;
-    background-color: yellow;
 
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 15px;
 }
 
 .avatar {
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid black;
 }
 
 .account-info img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
+.account-name {
+    font-weight: 700;
+}
+
+.banner .account-name {
+    font-size: 20px;
+}
+ 
 .h-child {
-    /* height: 50px; */
     align-self: center;
 }
 
 .banner {
     grid-area: banner;
-    background-color: yellow;
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 15px;
 }
 
 .banner img {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
+.banner-text .intro {
+    font-size: 14px;
+    font-weight: bold;
+}
 
 .post-buttons {
     grid-area: buttons;
-    background-color: yellow;
+
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.post-buttons button {
+    border: none;
+    padding: 5px 25px;
+    border-radius: 25px;
+    background-color: var(--main-color);
 }
