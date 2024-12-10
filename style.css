@@ -61,8 +61,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     display: grid;
 
-    grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
     align-content: start;
     justify-content: start;
     padding-left: 15px;
+    z-index: 1;
 }
 
 .sidebar ul {
@@ -92,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar h1 {
-    font-size: 32px;
+    font-size: 25px;
     margin-top: 10px;
     padding-bottom: var(--side-margin-bottom);
 }
@@ -117,10 +118,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* header information */
-.main-header {
+.header {
     background-color: rgb(193, 42, 42);
     grid-area: header;
     width: 100%;
+    position: relative;
 
     background-color: rgb(255, 255, 255);
     display: grid;
@@ -129,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-areas: 
     "search account"
     "banner buttons";
-    padding: 15px 30px;
+    padding: 5px 40px 10px;
     gap: 10px 55px;
     box-shadow: rgb(179, 179, 179) 0px 4px 6px;
 }
@@ -178,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner .account-name {
-    font-size: 20px;
+    font-size: 18px;
 }
  
 .h-child {
@@ -193,12 +195,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner img {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
 }
 
 .banner-text .intro {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -219,18 +221,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Main Content */
 .main-content {
-    background-color: aquamarine;
+    background-color: rgb(231, 235, 239);
     grid-area: main;
-    z-index: -1;
-    padding: 15px;
+    padding: 20px;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1.5fr 1fr;
+    grid-template-rows: 1.25fr 1fr;
     grid-template-areas: 
     "projects announcements"
     "projects trending";
-    gap: 15px;
+    gap: 20px;
 }
 
 .projects, .announcements, .trending {
@@ -241,5 +242,23 @@ h1, h2, h3, h4, h5, h6 {
     grid-area: projects;
 }
 
+.projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.projects-wrapper article {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    overflow: auto;
+    box-shadow: lightgray 0 4px 4px;
+    border-radius: 15px;
+}
+
+.projects-wrapper article header {
+    font-weight: bold;
+}
 
 
