@@ -66,11 +66,6 @@ h1, h2, h3, h4, h5, h6 {
         "sidebar main";
 }
 
-.main-header {
-    background-color: brown;
-    grid-area: header;
-}
-
 .main-content {
     background-color: aquamarine;
     grid-area: main;
@@ -121,4 +116,84 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar a {
     padding: 0 10px;
+}
+
+.main-header {
+    background-color: brown;
+    grid-area: header;
+}
+
+/* header information */
+.header-container {
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 70px;
+    grid-template-areas: 
+    "search account"
+    "banner buttons";
+    padding: 15px 30px;
+    gap: 10px 55px;
+}
+
+.search-container {
+    grid-area: search;
+    background-color: yellow;
+}
+
+.search-form {
+    display: flex;
+}
+
+#search {
+    appearance: none;
+    width: 400px;
+    margin-left: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+    padding-left: 4px;
+}
+
+.account-info {
+    grid-area: account;
+    background-color: yellow;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.avatar {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account-info img {
+    height: 50px;
+    width: 50px;
+}
+
+.h-child {
+    /* height: 50px; */
+    align-self: center;
+}
+
+.banner {
+    grid-area: banner;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.banner img {
+    height: 70px;
+    width: 70px;
+}
+
+
+.post-buttons {
+    grid-area: buttons;
+    background-color: yellow;
 }
