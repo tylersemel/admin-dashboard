@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-areas: 
     "search account"
     "banner buttons";
-    padding: 5px 40px 10px;
+    padding: 5px 70px 10px;
     gap: 10px 55px;
     box-shadow: rgb(179, 179, 179) 0px 4px 6px;
 }
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-content {
     background-color: rgb(231, 235, 239);
     grid-area: main;
-    padding: 20px;
+    padding: 20px 40px 10px;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -232,10 +232,6 @@ h1, h2, h3, h4, h5, h6 {
     "projects announcements"
     "projects trending";
     gap: 20px;
-}
-
-.projects, .announcements, .trending {
-    background-color: red;
 }
 
 .projects {
@@ -250,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
 
 .projects-wrapper article {
@@ -286,6 +282,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 8px;
+    box-shadow: rgb(191, 191, 191) 1px 3px 5px;
 }
 
 .announcements-wrapper article header {
@@ -304,3 +301,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
+.trending {
+    height: inherit;
+}
+
+.trending-wrapper {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    height: 85%;
+    box-shadow: rgb(191, 191, 191) 1px 3px 5px;
+}
