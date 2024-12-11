@@ -223,10 +223,10 @@ h1, h2, h3, h4, h5, h6 {
 .main-content {
     background-color: rgb(231, 235, 239);
     grid-area: main;
-    padding: 20px 40px 10px;
+    padding: 20px 40px 30px;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "projects announcements"
@@ -236,17 +236,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .projects {
     grid-area: projects;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .projects-wrapper {
-    height: 100%;
-    justify-content: space-between;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
 }
 
 .projects-wrapper article {
@@ -307,13 +302,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .trending-wrapper {
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
     border-radius: 8px;
     box-shadow: rgb(191, 191, 191) 1px 3px 5px;
 }
 
 .trending-wrapper article {
     padding: 3px;
+    padding-bottom: 10px;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -329,10 +326,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-/* .projects, .announcements, .trending {
-    background-color: red;
-} */
 
 h3 {
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
