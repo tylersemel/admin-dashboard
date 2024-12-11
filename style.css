@@ -54,6 +54,10 @@ h1, h2, h3, h4, h5, h6 {
 :root {
     --side-margin-bottom: 20px;
     --main-color: rgb(201, 245, 255);
+
+    --sidebar-color: #444554;
+    /* --header-color: 1; */
+    --accent-color: #BFACB5;
 }
 
 
@@ -69,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar {
-    background-color: var(--main-color);
+    background-color: var(--sidebar-color);
     grid-area: sidebar;
 
     display: grid;
@@ -90,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar a {
     text-decoration: none;
+    color: white;
 }
 
 .sidebar h1 {
@@ -216,7 +221,8 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     padding: 5px 25px;
     border-radius: 25px;
-    background-color: var(--main-color);
+    background-color: var(--sidebar-color);
+    color: white;
 }
 
 /* Main Content */
@@ -250,12 +256,17 @@ h1, h2, h3, h4, h5, h6 {
     height: 155px;
     box-shadow: rgb(191, 191, 191) 1px 3px 5px;
     border-radius: 8px;
-    border-left: 8px solid rgb(255, 174, 0);
+    border-left: 8px solid var(--accent-color);
 }
 
 .projects-wrapper article p {
-    overflow-y: auto;
-    scrollbar-width: thin;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     padding-right: 20px;
     font-size: 14px;
     color: rgb(106, 106, 106);
